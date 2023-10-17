@@ -25,3 +25,25 @@ function operate(operator, numA, numB) {
 
   return result;
 }
+
+//initialize Display
+display = document.querySelector(".display");
+let displayValue;
+
+function populateDisplay(content) {
+  display.textContent = content;
+}
+
+//initialize Number Buttons
+numBtns = document.querySelectorAll(".btn-number");
+console.log(numBtns);
+numBtns.forEach((numBtn) => {
+  console.log(numBtn.value);
+  numBtn.addEventListener("click", () => {
+    numBtnClick(numBtn.value);
+  });
+});
+
+function numBtnClick(value) {
+  populateDisplay(value);
+}
